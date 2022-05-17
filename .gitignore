@@ -1,5 +1,4 @@
 .DS_Store
-dataset/*_texts
-dataset/data.csv
+data/*.csv
 .ipynb_checkpoints
 __pycache__/
