@@ -1,29 +1,29 @@
 dial_label = {
-    0 : 'emiliano',
-    1 : 'napoletano',
-    2 : 'piemontese',
-    3 : 'friulano',
-    4 : 'ladino',
-    5 : 'ligure',
-    6 : 'lombardo',
-    7 : 'tarantino',
-    8 : 'siciliano', 
-    9 : 'veneto',
-    10 : 'sardo'
+    0 : 'EML',
+    1 : 'NAP',
+    2 : 'PMS',
+    3 : 'FUR',
+    4 : 'LLD',
+    5 : 'LIJ',
+    6 : 'LMO',
+    7 : 'ROA_TARA',
+    8 : 'SCN', 
+    9 : 'VEC',
+    10 : 'SC'
 }
 
 fold_label = {
-    'eml_texts' : 0,
-    'nap_texts' : 1,
-    'pms_texts' : 2,
-    'fur_texts' : 3,
-    'lld_texts' : 4,
-    'lij_texts' : 5,
-    'lmo_texts' : 6,
-    'roa_tara_texts' : 7,
-    'scn_texts' : 8,
-    'vec_texts' : 9,
-    'sc_texts' : 10
+    'EML' : 0,
+    'NAP' : 1,
+    'PMS' : 2,
+    'FUR' : 3,
+    'LLD' : 4,
+    'LIJ' : 5,
+    'LMO' : 6,
+    'ROA_TARA' : 7,
+    'SCN' : 8,
+    'VEC' : 9,
+    'SC' : 10
 }
 
 def explain_label(label : int) -> str:
