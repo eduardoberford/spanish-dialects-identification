@@ -4,6 +4,7 @@
 To download and parse the dataset, use the following commands.
 ```
 pip install wikiextractor
+cd data/
 chmod 700 create.sh
 ./create.sh
 ```
