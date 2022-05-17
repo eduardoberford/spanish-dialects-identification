@@ -1,10 +1,10 @@
 # csnlp-project
 
-## How to get the dataset
-To download the dataset, use the following commands.
+## How to create the dataset
+To download and parse the dataset, use the following commands.
 ```
 pip install wikiextractor
-chmod 700 get_it_wikis.sh
-./get_it_wikis.sh
+chmod 700 create.sh
+./create.sh
 ```
-Once the dataset is downloaded, you can pre-process and save it to csv using the notebook [`dataset_utils.ipynb`](dataset/dataset_utils.ipynb).
+The script `create.sh` will automatically download, preprocess and export to csv the Wikipedia dumps used as training data.
