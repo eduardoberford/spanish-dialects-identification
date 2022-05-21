@@ -8,4 +8,10 @@ dependencies:
   - pandas
   - keras
   - ipykernel
+  - seaborn
+  - request
+  - requests
+  - tqdm
+  - nltk
+  - scikit-learn
 prefix: /opt/homebrew/Caskroom/miniforge/base/envs/cs4nlp
