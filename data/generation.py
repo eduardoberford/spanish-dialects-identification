@@ -55,6 +55,8 @@ for d in tqdm(dialects):
 columns = {'id':int(), 'url':str, 'title':str, 'text':str, 'label':int()}
 df = pd.DataFrame(data, columns = columns)
 
+df = df.drop(columns=["id", "url", "title"])
+
 # clean text
 def clean(text):
     text = re.sub(r'==.*?==+', '', text)
@@ -95,6 +97,9 @@ df['text'] = df['text'].apply(clean)
 
 # drop rows with nan values
 df.dropna(inplace=True)
+
+# drop duplicate entries in the samples
+df.drop_duplicates(subset ='text',keep = False, inplace = True) 
 
 df.to_csv("train.csv", index=None)
 
