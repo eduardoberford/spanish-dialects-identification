@@ -22,7 +22,8 @@ fold_label = {
     'roa_tara_texts' : 7,
     'scn_texts' : 8,
     'vec_texts' : 9,
-    'sc_texts' : 10
+    'sc_texts' : 10,
+    'it_texts' : 11
 }
 dial_label = {
     0 : 'EML',
@@ -35,7 +36,8 @@ dial_label = {
     7 : 'ROA_TARA',
     8 : 'SCN', 
     9 : 'VEC',
-    10 : 'SC'
+    10 : 'SC',
+    11 : 'ITA'
 }
 
 # create training dataset
