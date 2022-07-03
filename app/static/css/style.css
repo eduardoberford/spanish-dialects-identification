@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
+
+html { 
+    width: 100%; 
+    height:100%; 
+    overflow-y: auto;
+}
+
+body {
+	width: 100%;
+	height:100%;
+	font-family: 'Roboto', sans-serif;
+    background-color: #273241;
+	color: #fff;
+	font-size: 16px;
+	text-align:center;
+	letter-spacing:1.2px;
+}
+
+.main {
+	position: relative;
+	top: 5%;
+	left: 5%;
+	width:90%;
+	height:80%;
+}
+
+.form{
+    position: relative;
+    margin-top: 60px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.result {
+    width: 90%;
+    height: 70%;
+    position: relative;
+    margin-top: 20px;
+    left: 5%;
+}
+
+.proba {
+    width: 100%;
+}
+
+.map {
+    margin-top: 25px;
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+
+    .form{
+        width: 50%;
+    }
+
+    .proba {
+        width: 60%;
+        float:left;
+        position: relative;
+    }
+    
+    .map {
+        margin-top: 0px;
+        width: 40%;
+        float:right;
+        left: -10%;
+        position: relative;
+    }
+}

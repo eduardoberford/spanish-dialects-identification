@@ -53,7 +53,7 @@ class LogisticRegressionITDI:
                                         verbose=0
                                         )
 
-    def fit(self, X_train: np.ndarray, y_train: np.ndarray, X_val: np.ndarray, y_val: np.ndarray) -> Tuple:
+    def fit(self, X_train: np.ndarray, y_train: np.ndarray, X_val: np.ndarray = None, y_val: np.ndarray = None) -> Tuple:
         """
         Fit the model with training data. If hold-out data are provided, evaluate the model.
 
@@ -132,6 +132,12 @@ class LogisticRegressionITDI:
         X = self.scaler.transform(X)
         return self.model.predict(X)
 
+    def predict_proba(self, X):
+        if isinstance(X, str): X = [X]
+        # vectorize and scale test data
+        X = self.vectorizer.transform(X)
+        X = self.scaler.transform(X)
+        return self.model.predict_proba(X)
 
     def rkf_cv(self, X, y, folds = 5, n_repeats = 3):
         """
@@ -171,14 +177,14 @@ class LogisticRegressionITDI:
     
 def main():
 
-    import pandas as pd
-    data_train = pd.read_csv("../data/train.csv")
-    X, y = data_train['text'].values, data_train['label'].values.astype(int)
-
+    from utils import load_data
+    X, y = load_data(train_path="../data/train.csv", val_path=None)
+    
     print("Cross-validating Logistic Regression...")
         
     model = LogisticRegressionITDI(verbose=1)
     mean, std = model.rkf_cv(X, y)
+    
     print(f'Repeated cross-validation scores: {mean} ({std})')
 
 if __name__ == "__main__":
