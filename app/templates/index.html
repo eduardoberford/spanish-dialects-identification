@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ITDI</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link href='https://fonts.googleapis.com/css?family=Pacif\' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+<link href ="//cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
+<script src="//cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<body>
+ <div class="main">
+
+	<h1>Italian Dialect Identification </h1>
+  ETHZ model submission for the ITalian Dialect Identification (ITDI) shared task at VarDial2022. 
+  <div class="form" action="">
+    <input name="sentence" required>
+    <i name="search" class="fa fa-search"></i>
+  </div>
+
+    <script>
+      document.getElementsByName("search")[0].addEventListener("click", function(event) {
+        var text = $(this).val();
+          $.ajax({
+            url: "/predict",
+            data: { sentence : text},
+            type: "get",
+            success: function(response) {
+              $("#result").html(response);
+            }
+          });
+      });
+      document.getElementsByName("sentence")[0].addEventListener("keyup", function(event) {
+        if (event.which == 13) {
+          var text = $(this).val();
+          $.ajax({
+            url: "/predict",
+            data: { sentence : text},
+            type: "get",
+            success: function(response) {
+              $("#result").html(response);
+            }
+          });
+        }
+    });
+    </script>
+
+ <script>
+  function draw(data) {
+    var marksCanvas = document.getElementById("marksChart");
+    var marksData = {
+      labels: ['EML', 'NAP', 'PMS', 'FUR', 'LLD', 'LIJ', 'LMO', 'RT', 'SCN','VEC', 'SC'],
+      datasets: [{
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgb(54, 162, 235)',
+        data: data
+      }]
+    };
+
+    var radarChart = new Chart(marksCanvas, {
+      type: 'radar',
+      data: marksData,
+      options: {
+        legend: {
+          labels: {
+              fontColor: 'rgba(255,255,255,1)',
+          }
+        },
+        scale: {
+          angleLines: {
+            color: "rgba(255,255,255,0.2)",
+          },
+          gridLines: {
+            color: "rgba(255,255,255,0.5)",
+          },
+          pointLabels:{
+            fontColor:"white",
+          },
+          ticks: {
+            display: false
+          },
+        }
+      }
+    });
+  };
+  
+ </script>
+
+   <div id="result" class="result"></div>
+ </div>
+
+ 
+
+</body>
+</html>
