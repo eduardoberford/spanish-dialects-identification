@@ -1,5 +1,6 @@
 .DS_Store
 data/*.csv
+data/*.txt
 .ipynb_checkpoints
 __pycache__/
 app/src/
