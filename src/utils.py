@@ -81,7 +81,7 @@ def load_data(train_path = "data/train.csv", val_path="dev/train.csv"):
         if val_path is None: return X_train, y_train
 
     if val_path is not None:
-        data_val = pd.read_csv("data/dev.txt", sep = "\t", names=["label", "text"])
+        data_val = pd.read_csv(val_path, sep = "\t", names=["label", "text"])
         data_val['label'] = data_val['label'].apply(encode_label)
         X_val, y_val = data_val['text'].values, data_val['label'].values.astype(int)
         if train_path is None: return X_val, y_val
