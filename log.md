@@ -14,3 +14,6 @@
 | Logistic Regression   | `default`                        |0.8957               |
 | Logistic Regression   | `sag_solver`                     |0.9295               |
 | Logistic Regression   | `sag_solver`, `class_weights`    |0.9445               |
+| Linear SVM            | `default`                        |0.8308               |
+| Naïve Bayes           | `default`                        |0.8467               |
+| LR ensemble           |                                  |0.9424               |
