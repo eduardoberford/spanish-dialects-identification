@@ -71,7 +71,7 @@ def human_readable_label(label) -> str:
 
 
 
-def load_data(train_path = "data/train.csv", val_path="dev/train.csv"):
+def load_data(train_path = "data/train.csv", val_path="data/dev.txt"):
     """
     Load training and evaluation data.
     """
