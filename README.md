@@ -1,4 +1,13 @@
-# Identification of Languages and Dialects of Italy 🇮🇹
+<h1 align="center">
+  <br>
+  Identification of Languages and Dialects of Italy 🇮🇹
+  <br>
+</h1>
+
+<p align="center">
+  <a href="http://itdiethz.herokuapp.com"><img src="https://img.shields.io/badge/demo-deployed-green.svg" alt="Licence" height="18"></a>
+  <a href="https://github.com/giacomocamposampiero/italian-dialects-identification/blob/main/LICENCE.md"><img src="https://img.shields.io/github/license/giacomocamposampiero/italian-dialects-identification" alt="Licence" height="18"></a>
+</p>
 
 Automatic Language Identification represents an important task for improving many real-world applications such as opinion mining and machine translation.
 In the case of closely-related languages such as regional dialects, this task is often challenging.
