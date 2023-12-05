@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  Identification of Languages and Dialects of Italy 🇮🇹
+  Identification of Languages and Dialects of Spain 🇪🇸 
   <br>
 </h1>
 
