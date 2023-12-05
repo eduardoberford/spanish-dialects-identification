@@ -12,32 +12,24 @@ dialects = [d for d in os.listdir(".") if not os.path.isfile(d) and d != '.ipynb
 
 # define dictionaries for string->int and int->label conversion
 fold_label = {
-    'eml_texts' : 0,
-    'nap_texts' : 1,
-    'pms_texts' : 2,
-    'fur_texts' : 3,
-    'lld_texts' : 4,
-    'lij_texts' : 5,
-    'lmo_texts' : 6,
-    'roa_tara_texts' : 7,
-    'scn_texts' : 8,
-    'vec_texts' : 9,
-    'sc_texts' : 10,
-    'it_texts' : 11
+    'ast_texts' : 0,
+    'eu_texts' : 1,
+    'gl_texts' : 2,
+    'an_texts' : 3,
+    'lad_texts' : 4,
+    'ca_texts' : 5,
+    #'es_texts' : 6,
+
+
 }
 dial_label = {
-    0 : 'EML',
-    1 : 'NAP',
-    2 : 'PMS',
-    3 : 'FUR',
-    4 : 'LLD',
-    5 : 'LIJ',
-    6 : 'LMO',
-    7 : 'ROA_TARA',
-    8 : 'SCN', 
-    9 : 'VEC',
-    10 : 'SC',
-    11 : 'ITA'
+    0 : 'AST',
+    1 : 'EU',
+    2 : 'GL',
+    3 : 'AN',
+    4 : 'LAD',
+    5 : 'CA',
+    #6 : 'ES',
 }
 
 # create training dataset
@@ -113,7 +105,7 @@ print("Splitting sentences...")
 
 import spacy
 
-nlp = spacy.load("it_core_news_sm", disable=['ner', 'lemmatizer', "textcat", "custom", "tagger"])
+nlp = spacy.load("es_core_news_sm", disable=['ner', 'lemmatizer', "textcat", "custom", "tagger"])
 
 from pandarallel import pandarallel
 pandarallel.initialize(progress_bar=True, verbose=0)
