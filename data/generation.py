@@ -17,7 +17,7 @@ fold_label = {
     'gl_texts' : 2,
     'an_texts' : 3,
     'lad_texts' : 4,
-    'ca_texts' : 5,
+    #'ca_texts' : 5,
     #'es_texts' : 6,
 
 
@@ -28,7 +28,7 @@ dial_label = {
     2 : 'GL',
     3 : 'AN',
     4 : 'LAD',
-    5 : 'CA',
+    #5 : 'CA',
     #6 : 'ES',
 }
 
@@ -87,8 +87,8 @@ def clean(text):
 
     return text
 
-# print("Saving uncleaned dataset...")
-# df.to_csv("uncleaned.csv", index=None)
+print("Saving uncleaned dataset...")
+df.to_csv("uncleaned.csv", index=None)
 
 print("Cleaning text...")
 
