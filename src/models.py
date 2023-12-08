@@ -49,7 +49,7 @@ class LogisticRegressionITDI:
                                         random_state=self.random_state, 
                                         n_jobs=self.n_jobs, 
                                         solver="sag", 
-                                        class_weight={0:1, 1:1, 2:1, 3:1, 4:1, 5:1, 6:0.38, 7:1, 8:0.66, 9:1, 10:1},
+                                        class_weight={0:1, 1:1, 2:1, 3:1, 4:1},
                                         #class_weight={0:5.01329465, 1:1.59955319, 2:0.60311469, 3:2.60301423, 4:1.48266328, 5:1.8468792 , 6:0.41534923, 7:2.80706276, 8:0.5999105 , 9:0.65356942, 10:1.04561053},
                                         verbose=0
                                         )
@@ -105,7 +105,7 @@ class LogisticRegressionITDI:
 
             # score the predictions
             val_score = f1_score(y_val, y_pred, average="micro")
-            cm = confusion_matrix(y_true=y_val, y_pred=y_pred, normalize="true", labels=range(0,11))
+            cm = confusion_matrix(y_true=y_val, y_pred=y_pred, normalize="true", labels=range(0,5))
 
 
         if self.verbose: print(f"Training completed, train_f1 : {train_score}, val_f1 : {val_score}")
@@ -179,8 +179,8 @@ class LogisticRegressionITDI:
 def main():
 
     from utils import load_data
-    X, y = load_data(train_path="../data/train.csv", val_path=None)
-    
+    X, y = load_data(train_path="train.csv")
+    print("Successfuly loaded X and y with shapes: " + str(X.shape) + str(y.shape))
     print("Cross-validating Logistic Regression...")
         
     model = LogisticRegressionITDI(verbose=1)
